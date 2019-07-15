@@ -4,6 +4,7 @@
   "description": "API para aprendizado",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,8 +24,12 @@
   },
   "homepage": "https://github.com/DinoSaulo/Creating_API-NodeJS#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "debug": "^4.1.1",
     "express": "^4.17.1",
     "http": "0.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

@@ -1,24 +1,14 @@
 'use strict' // Forçando o javascript a ser estruturado
 
+const  app = require('../src/app');
+
 const http = require('http');
 const debug = require('debug')('nodestr:server')
-const express = require('express')
 
-const app = express();
 const port = normalizePort(process.env.PORT || '3000'); //porta em que vai roda a aplicação
 app.set('port', port);
 
 const server = http.createServer(app); //criando o servidor -> Definindo o MVC
-const router = express.Router(); // arquivos de rotas
-
-const route = router.get('/', (req, res, next) => {
-    res.status(200).send({
-        title: "Estruturação da API",
-        version: "0.0.1"
-    })
-});
-
-app.use('/', route); // definindo a rota padrão
 
 server.listen(port) // ouvindo a porta
 server.on('error', onError); // gerenciando Erros do Servidor
@@ -37,7 +27,7 @@ function normalizePort(val) {
         return port;
     }
 
-    return port;
+    return false;
 }
 
 function onError(error) {
