@@ -2,21 +2,22 @@
 
 const express = require('express');
 const router = express.Router(); // arquivos de rotas
+const controller = require('../controllers/product-controler'); // importando os controllers
 
-router.post('/', (req, res, next) => {
-    res.status(201).send(req.body);
-});
+// definição dos metodos
 
-router.put('/:id', (req, res, next) => {
-    const id = req.params.id;
-    res.status(200).send({
-        id: id,
-        item: req.body
-    });
-});
+router.get('/', controller.get);
 
-router.delete('/', (req, res, next) => {
-    res.status(200).send(req.body);
-});
+router.get('/:slug', controller.getBySlug);
+
+router.get('/admin/:id', controller.getById);
+
+router.get('/tags/:tag', controller.getByTag);
+
+router.post('/', controller.post);
+
+router.put('/:id', controller.put);
+
+router.delete('/', controller.delete);
 
 module.exports = router;
