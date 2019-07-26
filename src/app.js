@@ -11,6 +11,8 @@ const router = express.Router(); // arquivos de rotas
 mongoose.connect('mongodb+srv://saulo:saulo@nodestr-swwcy.mongodb.net/test?retryWrites=true&w=majority');
 
 const Product = require('./models/product');
+const Custumer = require('./models/custumer');
+const Order = require('./models/order');
 
 const indexRoute = require('./routes/index-route'); // carregando as rotas
 const productRoute = require('./routes/product-route'); // carregando as rotas
