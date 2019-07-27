@@ -20,7 +20,7 @@ exports.post = async(req, res, next) => {
         res.status(201).send({
             message: 'Cliente cadastrado com sucesso!'
         });
-    } catch {
+    } catch (e) {
         res.status(500).send({
             message: 'Falha ao processar a requisição post'
         });

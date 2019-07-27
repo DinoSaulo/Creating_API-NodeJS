@@ -17,6 +17,7 @@ const Order = require('./models/order');
 const indexRoute = require('./routes/index-route'); // carregando as rotas
 const productRoute = require('./routes/product-route'); // carregando as rotas
 const customerRoute = require('./routes/customer-route'); // carregando as rotas
+const orderRoute = require('./routes/order-route'); // carregando as rotas
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', indexRoute); // definindo a rota padrão
 app.use('/products', productRoute);
 app.use('/customers', customerRoute);
+app.use('/orders', orderRoute);
 
 
 module.exports = app;

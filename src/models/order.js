@@ -16,7 +16,7 @@ const schema = new Schema({
     status: {
         type: String,
         required: true,
-        enum: ['criado', 'pronto'],
+        enum: ['created', 'done'],
         default: 'created'
     },
     customer: {
@@ -37,7 +37,7 @@ const schema = new Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Product'
         }
-    }]
+    }],
 });
 
 
