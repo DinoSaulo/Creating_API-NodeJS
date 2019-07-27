@@ -1,7 +1,5 @@
 'use strict' // Forçando o javascript a ser estruturado
 
-const mongoose = require('mongoose');
-const Product = mongoose.model('Product');
 const ValidationContract = require('../validators/fluent-validator');
 const repository = require('../repositories/product-repository');
 

@@ -11,17 +11,19 @@ const router = express.Router(); // arquivos de rotas
 mongoose.connect('mongodb+srv://saulo:saulo@nodestr-swwcy.mongodb.net/test?retryWrites=true&w=majority');
 
 const Product = require('./models/product');
-const Custumer = require('./models/custumer');
+const Customer = require('./models/customer');
 const Order = require('./models/order');
 
 const indexRoute = require('./routes/index-route'); // carregando as rotas
 const productRoute = require('./routes/product-route'); // carregando as rotas
+const customerRoute = require('./routes/customer-route'); // carregando as rotas
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', indexRoute); // definindo a rota padrão
 app.use('/products', productRoute);
+app.use('/customers', customerRoute);
 
 
 module.exports = app;
