@@ -3,11 +3,12 @@
 const express = require('express');
 const router = express.Router(); // arquivos de rotas
 const controller = require('../controllers/order-controler'); // importando os controllers
+const authService = require('../services/auth-service');
 
 // definição dos metodos
 
-router.get('/', controller.get);
+router.get('/', authService.authorize, controller.get);
 
-router.post('/', controller.post);
+router.post('/', authService.authorize, controller.post);
 
 module.exports = router;

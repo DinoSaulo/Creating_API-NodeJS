@@ -7,5 +7,6 @@ const controller = require('../controllers/customer-controler'); // importando o
 // definição dos metodos
 
 router.post('/', controller.post);
+router.post('/authenticate', controller.authenticate);
 
 module.exports = router;
